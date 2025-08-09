@@ -1,2 +1,3 @@
-# website_v2
-Ethan Britton Portfolio V2
+# Ethan Britton Website V2
+
+https://ethan-britton.com/ <br/>
