@@ -1,5 +1,51 @@
-.test {
-  font-size: 400px;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Mozilla Text", sans-serif;
+  color: #161616;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #ffa66c, #fff6ed);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.heading-1 {
+  font-size: 4.5rem;
+  font-weight: inherit;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  font-weight: inherit;
+}
+
+.heading-3 {
+  font-size: 3rem;
+  font-weight: inherit;
+}
+
+.heading-4 {
+  font-size: 2rem;
+  font-weight: inherit;
 }
 
 /*# sourceMappingURL=style.css.map */
