@@ -1,1 +1,177 @@
+// =================================================================================== //
+//                                                                                     //
+//                                    Header                                           //
+//                                                                                     //
+// =================================================================================== //
 
+.header {
+  grid-column: full-start / full-end;
+
+  background-image: linear-gradient(to bottom, $color-primary, $color-off-white);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: 2rem;
+  justify-items: center;
+
+  overflow: hidden;
+
+  &_img {
+    grid-column: full-start / full-end;
+    margin-top: auto;
+    display: block;
+    width: 100%;
+    transform: translateY(-40%);
+
+    @media only screen and (max-width: $bp-largest) {
+      width: 130%;
+    }
+  }
+
+  &_title {
+    margin-top: 3rem;
+    grid-column: center-start / center-end;
+    font-size: 10rem;
+    line-height: 1;
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in forwards;
+    animation-delay: 0.3s;
+  }
+
+  &_subtitle {
+    grid-column: center-start / center-end;
+    font-size: 4rem;
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in forwards;
+    animation-delay: 1s;
+  }
+
+  &_description {
+    grid-column: center-start / center-end;
+    font-size: 2rem;
+    display: flex;
+
+    &_box {
+      padding-left: 10rem;
+      transform: translateX(-5rem);
+      overflow: hidden;
+    }
+
+    &_text {
+      font-size: 2rem;
+      animation: slideFromRight 1s ease-out forwards;
+      animation-delay: 1.7s;
+      opacity: 0;
+
+      &_green {
+        background: linear-gradient(to right, green);
+        background-clip: text;
+        color: transparent;
+        transform: translateX(-5rem);
+      }
+    }
+  }
+
+  &_navbox {
+    grid-column: center-start / center-end;
+    background-color: $color-primary-light;
+    width: 90%;
+    margin-top: 3rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_img {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    &_favicon {
+      margin-left: 2rem;
+      width: 5rem;
+      height: 5rem;
+    }
+
+    &_nav {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &_item:link,
+      &_item:visited {
+        font-size: 1.7rem;
+        color: $color-near-black;
+        font-weight: 600;
+        text-decoration: none;
+        font-family: $font-primary;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 2rem 1rem;
+        display: block;
+        transition: all 0.2s;
+      }
+
+      &_item:hover,
+      &_item:active {
+        color: #8a6f5a;
+      }
+    }
+  }
+}
+
+// =================================================================================== //
+//                                                                                     //
+//                                    Main                                             //
+//                                                                                     //
+// =================================================================================== //
+
+.main {
+  grid-column: center-start / center-end;
+}
+
+// =================================================================================== //
+//                                                                                     //
+//                                    Footer                                           //
+//                                                                                     //
+// =================================================================================== //
+
+.footer {
+  grid-column: full-start / full-end;
+
+  background-color: $color-secondary;
+}
+
+// =================================================================================== //
+//                                                                                     //
+//                                    Animations                                       //
+//                                                                                     //
+// =================================================================================== //
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

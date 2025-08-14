@@ -1,7 +1,11 @@
 // Colors
 $color-primary: #ffa66c;
-$color-primary-light: #ffbe94;
+$color-primary-light: #ffc99f;
 $color-primary-light-2: #fff6ed;
+
+$color-secondary: #f3efe6;
+
+$color-off-white: #fefdf9;
 
 $color-grey-light-1: #faf9f9;
 $color-grey-light-2: #f4f2f2;
@@ -16,6 +20,9 @@ $color-near-black: #161616;
 
 // Fonts
 $font-primary: "Mozilla Text", sans-serif;
+
+// Breakpoints
+$bp-largest: 81.25em; // 1300px/16
 
 * {
   margin: 0;
@@ -38,4 +45,5 @@ body {
   color: $color-near-black;
   font-weight: 300;
   line-height: 1.6;
+  background-color: $color-off-white;
 }
