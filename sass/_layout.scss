@@ -1,6 +1,15 @@
 .container {
   display: grid;
+  height: 100vh;
   grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-  grid-template-rows: 57%;
+  grid-template-rows: 90rem;
   row-gap: 5rem;
+
+  @media only screen and (max-width: $bp-1) {
+    grid-template-rows: 80rem;
+  }
+
+  @media only screen and (max-width: $bp-6) {
+    grid-template-columns: [full-start] minmax(2rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(2rem, 1fr) [full-end];
+  }
 }

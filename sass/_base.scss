@@ -7,22 +7,21 @@ $color-secondary: #f3efe6;
 
 $color-off-white: #fefdf9;
 
-$color-grey-light-1: #faf9f9;
-$color-grey-light-2: #f4f2f2;
-$color-grey-light-3: #f0eeee;
-$color-grey-light-4: #ccc;
-
-$color-grey-dark-1: #333;
+$color-grey-dark-1: #84827e;
 $color-grey-dark-2: #777;
-$color-grey-dark-3: #999;
 
 $color-near-black: #161616;
 
 // Fonts
 $font-primary: "Mozilla Text", sans-serif;
 
-// Breakpoints
-$bp-largest: 81.25em; // 1300px/16
+// Breakpoints px/16
+$bp-1: 120em; // 1920px
+$bp-2: 93.75em; // 1500px
+$bp-3: 80em; // 1280px
+$bp-4: 62.5em; // 1000px
+$bp-5: 53.75em; // 860px
+$bp-6: 34.375em; // 500px
 
 * {
   margin: 0;
@@ -38,6 +37,18 @@ $bp-largest: 81.25em; // 1300px/16
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px
+
+  @media only screen and (max-width: $bp-2) {
+    font-size: 57.5%;
+  }
+
+  @media only screen and (max-width: $bp-3) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-4) {
+    font-size: 47.5%;
+  }
 }
 
 body {
