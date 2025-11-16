@@ -86,6 +86,7 @@
   grid-template-rows: 90rem;
   row-gap: 5rem;
   transition: opacity 1s ease-out 0.5s;
+  overflow: hidden;
 
   @media only screen and (max-width: $bp-1) {
     grid-template-rows: 80rem;
@@ -99,4 +100,5 @@
 
 #content.is-active {
   opacity: 1;
+  overflow: auto;
 }
