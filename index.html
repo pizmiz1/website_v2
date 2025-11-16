@@ -12,199 +12,263 @@
 
     <title>Ethan Britton</title>
   </head>
-  <body class="container">
-    <header class="header">
-      <div class="header_navbox">
-        <a href="#">
-          <img src="img/favicon.png" alt="Favicon" class="header_navbox_favicon" />
-        </a>
-        <ul class="header_navbox_nav">
-          <li class="header_navbox_nav_item">
-            <a class="header_navbox_nav_link" href="#experience">Experience</a>
-          </li>
-          <li class="header_navbox_nav_item">
-            <a class="header_navbox_nav_link" href="#projects">Projects</a>
-          </li>
-          <li class="header_navbox_nav_item">
-            <a class="header_navbox_nav_link" href="#footer">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <p class="header_title">Ethan Britton</p>
-      <p class="header_subtitle">Software Engineer</p>
-      <div class="header_description">
-        <div class="header_description_box">
-          <p class="header_description_text">Designing and building software is my&nbsp;</p>
-        </div>
-        <p class="header_description_text_green">happy place.</p>
-      </div>
-      <img src="img/header_background.png" alt="Header Background" class="header_img" />
-    </header>
+  <body>
+    <div id="page-loader">
+      <div class="loader-text" id="loadingText"></div>
+      <div class="loader-spinner"></div>
+    </div>
 
-    <main class="main">
-      <section class="main_experiences" id="experience">
-        <p class="main_experiences_title">Experience</p>
-        <div class="main_experiences_block">
-          <div class="main_experiences_block_text">
-            <p class="main_experiences_block_text_header">Medpace</p>
-            <p class="main_experiences_block_text_subtitle">SOFTWARE ENGINEER II | AUGUST 2022 - PRESENT</p>
-            <p class="main_experiences_block_text_description">
-              Worked on a company-wide IT architecture team to develop shared projects for all developers. Led a team of five to develop a web application for managing setup of medical clinical
-              trials. Also helped contribute and lead large scale feature development and architecture projects on several applications. Developed reusable pipelines for deploying and managing
-              application infrastructure. Worked in an AGILE framework leading various sprint meetings as well as coordinating efforts to communicate with other teams and applications.
-            </p>
-          </div>
-          <img src="img/Medpace.jpg" alt="Medpace" class="main_experiences_block_img" />
-        </div>
-        <div class="main_experiences_block">
-          <img src="img/Siemens.jpg" alt="Siemens" class="main_experiences_block_img" />
-          <div class="main_experiences_block_text">
-            <p class="main_experiences_block_text_header">Siemens</p>
-            <p class="main_experiences_block_text_subtitle">SOFTWARE RESEARCH AND DEVELOPMENT CO-OP | AUGUST 2020 - DECEMBER 2020</p>
-            <p class="main_experiences_block_text_description">
-              Researched and learned completely new topics in emerging fields such as artificial intelligence. Learned and implemented a basic POC using TensorFlow and Python for a text generation
-              application. Researched text generation AI and used a closed source beta API to train and develop a small text generation application.
-            </p>
-          </div>
-        </div>
-        <div class="main_experiences_block">
-          <div class="main_experiences_block_text">
-            <p class="main_experiences_block_text_header">International TechneGroup</p>
-            <p class="main_experiences_block_text_subtitle">SOFTWARE DEVELOPER/QA CO-OP | JANUARY 2020 - MAY 2020</p>
-            <p class="main_experiences_block_text_description">
-              Worked on two proprietary softwares both in a QA and developer role for CAD systems. Developed and maintained automated testing framework for one software on a two-person team. Developed
-              and maintained new methodologies for certain processes within both teams.
-            </p>
-          </div>
-          <img src="img/Wipro.jpg" alt="Wipro" class="main_experiences_block_img" />
-        </div>
-      </section>
-
-      <section class="main_projects" id="projects">
-        <p class="main_projects_title">Projects</p>
-        <button class="main_projects_btn" id="main_projects_btn" onclick="togglePlayPause()">
-          <i class="fa-regular fa-circle-pause" id="main_projects_icon"></i>
-        </button>
-        <div class="main_projects_cards">
-          <a href="https://zietzmn.wixsite.com/linedo" target="_blank" class="main_projects_card main_projects_card_all" id="card_1">
-            <div class="main_projects_card_header">
-              <div class="main_projects_card_header_imgbox">
-                <img src="img/Linedo.png" alt="Linedo" class="main_projects_card_header_imgbox_img" />
-              </div>
-              <div class="main_projects_card_header_text">
-                <p class="main_projects_card_header_text_title">Linedo</p>
-                <p class="main_projects_card_header_text_subtitle">Mobile App</p>
-              </div>
-            </div>
-            <p class="main_projects_card_description">Cross platform mobile application that provides real time wait estimation for Cincinnati local restaurants and bars.</p>
+    <div id="content" class="hidden">
+      <header class="header">
+        <div class="header_navbox">
+          <a href="#">
+            <img src="img/favicon.png" alt="Favicon" class="header_navbox_favicon" />
           </a>
-          <a href="https://ethan-britton.com/" target="_blank" class="main_projects_card main_projects_card_all" id="card_2">
-            <div class="main_projects_card_header">
-              <div class="main_projects_card_header_imgbox">
-                <img src="img/Website.png" alt="Website" class="main_projects_card_header_imgbox_img" />
-              </div>
-              <div class="main_projects_card_header_text">
-                <p class="main_projects_card_header_text_title">Portfolio</p>
-                <p class="main_projects_card_header_text_subtitle">Website</p>
-              </div>
-            </div>
-            <p class="main_projects_card_description">Portfolio for me, multiple versions have been built with different tools.</p>
-          </a>
-          <a href="https://sites.google.com/view/mainpointwebsite/home" target="_blank" class="main_projects_card main_projects_card_all" id="card_3">
-            <div class="main_projects_card_header">
-              <div class="main_projects_card_header_imgbox">
-                <img src="img/MainPoint.png" alt="MainPoint" class="main_projects_card_header_imgbox_img" />
-              </div>
-              <div class="main_projects_card_header_text">
-                <p class="main_projects_card_header_text_title">MainPoint</p>
-                <p class="main_projects_card_header_text_subtitle">Mobile App</p>
-              </div>
-            </div>
-            <p class="main_projects_card_description">Cross platform health and fitness mobile application for managing grocery list, meal building, macro tracking, workout planning and many more.</p>
-          </a>
+          <ul class="header_navbox_nav">
+            <li class="header_navbox_nav_item">
+              <a class="header_navbox_nav_link" href="#experience">Experience</a>
+            </li>
+            <li class="header_navbox_nav_item">
+              <a class="header_navbox_nav_link" href="#projects">Projects</a>
+            </li>
+            <li class="header_navbox_nav_item">
+              <a class="header_navbox_nav_link" href="#footer">Contact</a>
+            </li>
+          </ul>
         </div>
+        <p class="header_title">Ethan Britton</p>
+        <p class="header_subtitle">Software Engineer</p>
+        <div class="header_description">
+          <div class="header_description_box">
+            <p class="header_description_text">Designing and building software is my&nbsp;</p>
+          </div>
+          <p class="header_description_text_green">happy place.</p>
+        </div>
+        <img alt="Header Background" class="header_img" id="header-image" />
+      </header>
 
-        <script>
-          const mobileMediaQuery = window.matchMedia("(max-width: 62.5em)");
-          const button = document.getElementById("main_projects_btn");
-          const icon = document.getElementById("main_projects_icon");
-          const card1 = document.getElementById("card_1");
-          const card2 = document.getElementById("card_2");
-          const card3 = document.getElementById("card_3");
+      <main class="main">
+        <section class="main_experiences" id="experience">
+          <p class="main_experiences_title">Experience</p>
+          <div class="main_experiences_block">
+            <div class="main_experiences_block_text">
+              <p class="main_experiences_block_text_header">Medpace</p>
+              <p class="main_experiences_block_text_subtitle">SOFTWARE ENGINEER II | AUGUST 2022 - PRESENT</p>
+              <p class="main_experiences_block_text_description">
+                Worked on a company-wide IT architecture team to develop shared projects for all developers. Led a team of five to develop a web application for managing setup of medical clinical
+                trials. Also helped contribute and lead large scale feature development and architecture projects on several applications. Developed reusable pipelines for deploying and managing
+                application infrastructure. Worked in an AGILE framework leading various sprint meetings as well as coordinating efforts to communicate with other teams and applications.
+              </p>
+            </div>
+            <img src="img/Medpace.jpg" alt="Medpace" class="main_experiences_block_img" />
+          </div>
+          <div class="main_experiences_block">
+            <img src="img/Siemens.jpg" alt="Siemens" class="main_experiences_block_img" />
+            <div class="main_experiences_block_text">
+              <p class="main_experiences_block_text_header">Siemens</p>
+              <p class="main_experiences_block_text_subtitle">SOFTWARE RESEARCH AND DEVELOPMENT CO-OP | AUGUST 2020 - DECEMBER 2020</p>
+              <p class="main_experiences_block_text_description">
+                Researched and learned completely new topics in emerging fields such as artificial intelligence. Learned and implemented a basic POC using TensorFlow and Python for a text generation
+                application. Researched text generation AI and used a closed source beta API to train and develop a small text generation application.
+              </p>
+            </div>
+          </div>
+          <div class="main_experiences_block">
+            <div class="main_experiences_block_text">
+              <p class="main_experiences_block_text_header">International TechneGroup</p>
+              <p class="main_experiences_block_text_subtitle">SOFTWARE DEVELOPER/QA CO-OP | JANUARY 2020 - MAY 2020</p>
+              <p class="main_experiences_block_text_description">
+                Worked on two proprietary softwares both in a QA and developer role for CAD systems. Developed and maintained automated testing framework for one software on a two-person team.
+                Developed and maintained new methodologies for certain processes within both teams.
+              </p>
+            </div>
+            <img src="img/Wipro.jpg" alt="Wipro" class="main_experiences_block_img" />
+          </div>
+        </section>
 
-          function classUpdate(play) {
-            if (play) {
-              card1.classList.remove("main_projects_card_no_animation");
-              card1.classList.add("main_projects_card");
-              card2.classList.remove("main_projects_card_no_animation");
-              card2.classList.add("main_projects_card");
-              card3.classList.remove("main_projects_card_no_animation");
-              card3.classList.add("main_projects_card");
-            } else {
-              card1.classList.remove("main_projects_card");
-              card1.classList.add("main_projects_card_no_animation");
-              card2.classList.remove("main_projects_card");
-              card2.classList.add("main_projects_card_no_animation");
-              card3.classList.remove("main_projects_card");
-              card3.classList.add("main_projects_card_no_animation");
-            }
-          }
+        <section class="main_projects" id="projects">
+          <p class="main_projects_title">Projects</p>
+          <button class="main_projects_btn" id="main_projects_btn" onclick="togglePlayPause()">
+            <i class="fa-regular fa-circle-pause" id="main_projects_icon"></i>
+          </button>
+          <div class="main_projects_cards">
+            <a href="https://zietzmn.wixsite.com/linedo" target="_blank" class="main_projects_card main_projects_card_all" id="card_1">
+              <div class="main_projects_card_header">
+                <div class="main_projects_card_header_imgbox">
+                  <img src="img/Linedo.png" alt="Linedo" class="main_projects_card_header_imgbox_img" />
+                </div>
+                <div class="main_projects_card_header_text">
+                  <p class="main_projects_card_header_text_title">Linedo</p>
+                  <p class="main_projects_card_header_text_subtitle">Mobile App</p>
+                </div>
+              </div>
+              <p class="main_projects_card_description">Cross platform mobile application that provides real time wait estimation for Cincinnati local restaurants and bars.</p>
+            </a>
+            <a href="https://ethan-britton.com/" target="_blank" class="main_projects_card main_projects_card_all" id="card_2">
+              <div class="main_projects_card_header">
+                <div class="main_projects_card_header_imgbox">
+                  <img src="img/Website.png" alt="Website" class="main_projects_card_header_imgbox_img" />
+                </div>
+                <div class="main_projects_card_header_text">
+                  <p class="main_projects_card_header_text_title">Portfolio</p>
+                  <p class="main_projects_card_header_text_subtitle">Website</p>
+                </div>
+              </div>
+              <p class="main_projects_card_description">Portfolio for me, multiple versions have been built with different tools.</p>
+            </a>
+            <a href="https://sites.google.com/view/mainpointwebsite/home" target="_blank" class="main_projects_card main_projects_card_all" id="card_3">
+              <div class="main_projects_card_header">
+                <div class="main_projects_card_header_imgbox">
+                  <img src="img/MainPoint.png" alt="MainPoint" class="main_projects_card_header_imgbox_img" />
+                </div>
+                <div class="main_projects_card_header_text">
+                  <p class="main_projects_card_header_text_title">MainPoint</p>
+                  <p class="main_projects_card_header_text_subtitle">Mobile App</p>
+                </div>
+              </div>
+              <p class="main_projects_card_description">
+                Cross platform health and fitness mobile application for managing grocery list, meal building, macro tracking, workout planning and many more.
+              </p>
+            </a>
+          </div>
 
-          function togglePlayPause() {
-            if (icon.classList.contains("fa-circle-play")) {
-              icon.classList.remove("fa-circle-play");
-              icon.classList.remove("main_projects_icon");
-              icon.classList.add("fa-circle-pause");
-            } else {
-              icon.classList.remove("fa-circle-pause");
-              icon.classList.add("fa-circle-play");
-              icon.classList.add("main_projects_icon");
-            }
+          <script>
+            const mobileMediaQuery = window.matchMedia("(max-width: 62.5em)");
+            const button = document.getElementById("main_projects_btn");
+            const icon = document.getElementById("main_projects_icon");
+            const card1 = document.getElementById("card_1");
+            const card2 = document.getElementById("card_2");
+            const card3 = document.getElementById("card_3");
 
-            if (card1.classList.contains("main_projects_card_no_animation")) {
-              classUpdate(true);
-            } else {
-              classUpdate(false);
-            }
-          }
-
-          function mobileQuery() {
-            if (mobileMediaQuery.matches) {
-              classUpdate(false);
-              button.disabled = true;
-            } else {
-              if (icon.classList.contains("fa-circle-pause")) {
-                classUpdate(true);
+            function classUpdate(play) {
+              if (play) {
+                card1.classList.remove("main_projects_card_no_animation");
+                card1.classList.add("main_projects_card");
+                card2.classList.remove("main_projects_card_no_animation");
+                card2.classList.add("main_projects_card");
+                card3.classList.remove("main_projects_card_no_animation");
+                card3.classList.add("main_projects_card");
+              } else {
+                card1.classList.remove("main_projects_card");
+                card1.classList.add("main_projects_card_no_animation");
+                card2.classList.remove("main_projects_card");
+                card2.classList.add("main_projects_card_no_animation");
+                card3.classList.remove("main_projects_card");
+                card3.classList.add("main_projects_card_no_animation");
               }
-              button.disabled = false;
+            }
+
+            function togglePlayPause() {
+              if (icon.classList.contains("fa-circle-play")) {
+                icon.classList.remove("fa-circle-play");
+                icon.classList.remove("main_projects_icon");
+                icon.classList.add("fa-circle-pause");
+              } else {
+                icon.classList.remove("fa-circle-pause");
+                icon.classList.add("fa-circle-play");
+                icon.classList.add("main_projects_icon");
+              }
+
+              if (card1.classList.contains("main_projects_card_no_animation")) {
+                classUpdate(true);
+              } else {
+                classUpdate(false);
+              }
+            }
+
+            function mobileQuery() {
+              if (mobileMediaQuery.matches) {
+                classUpdate(false);
+                button.disabled = true;
+              } else {
+                if (icon.classList.contains("fa-circle-pause")) {
+                  classUpdate(true);
+                }
+                button.disabled = false;
+              }
+            }
+
+            mobileMediaQuery.addListener(mobileQuery);
+            mobileQuery();
+          </script>
+        </section>
+      </main>
+
+      <footer class="footer" id="footer">
+        <a href="#">
+          <img src="img/favicon.png" alt="Favicon" class="footer_favicon" />
+        </a>
+        <div class="footer_icons">
+          <a class="footer_icons_icon" href="https://github.com/pizmiz1" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a class="footer_icons_icon" href="https://www.linkedin.com/in/ethan-britton-164657160/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a class="footer_icons_icon" href="mailto:ebritton12321@gmail.com" target="_blank">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+          <a class="footer_icons_icon" href="img/Ethan Britton Resume.pdf" target="_blank">
+            <i class="fa-regular fa-file"></i>
+          </a>
+        </div>
+        <p class="footer_text">Designed and developed by Ethan Britton</p>
+      </footer>
+
+      <script>
+        const loadingOptions = ["I feel like i'm supposed to be loading something...", "Don't panic...", "Are we there yet?", "Initializing the initializer...", "Shovelling coal into the server..."];
+
+        function displayRandomText() {
+          const randomIndex = Math.floor(Math.random() * loadingOptions.length);
+          const selectedText = loadingOptions[randomIndex];
+          document.getElementById("loadingText").innerText = selectedText;
+        }
+
+        // Optionally, display a random text on page load
+        window.onload = displayRandomText;
+      </script>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          const pageLoader = document.getElementById("page-loader");
+          const mainContent = document.getElementById("content");
+          const headerImage = document.getElementById("header-image");
+
+          let imageLoaded = false;
+          let timeElapsed = false;
+          const minDisplayTime = 2000; // 2 seconds
+
+          function initiateExitSequence() {
+            if (imageLoaded && timeElapsed) {
+              pageLoader.classList.add("is-hidden");
+
+              mainContent.classList.remove("hidden");
+
+              setTimeout(() => {
+                mainContent.classList.add("is-active");
+              }, 100);
             }
           }
 
-          mobileMediaQuery.addListener(mobileQuery);
-          mobileQuery();
-        </script>
-      </section>
-    </main>
+          setTimeout(() => {
+            timeElapsed = true;
+            initiateExitSequence();
+          }, minDisplayTime);
 
-    <footer class="footer" id="footer">
-      <a href="#">
-        <img src="img/favicon.png" alt="Favicon" class="footer_favicon" />
-      </a>
-      <div class="footer_icons">
-        <a class="footer_icons_icon" href="https://github.com/pizmiz1" target="_blank">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a class="footer_icons_icon" href="https://www.linkedin.com/in/ethan-britton-164657160/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a class="footer_icons_icon" href="mailto:ebritton12321@gmail.com" target="_blank">
-          <i class="fa-regular fa-envelope"></i>
-        </a>
-        <a class="footer_icons_icon" href="img/Ethan Britton Resume.pdf" target="_blank">
-          <i class="fa-regular fa-file"></i>
-        </a>
-      </div>
-      <p class="footer_text">Designed and developed by Ethan Britton</p>
-    </footer>
+          headerImage.addEventListener("load", () => {
+            imageLoaded = true;
+            initiateExitSequence();
+          });
+
+          headerImage.addEventListener("error", () => {
+            imageLoaded = true;
+            console.error("Header image failed to load, proceeding anyway.");
+            initiateExitSequence();
+          });
+
+          headerImage.src = "img/header_background.png";
+        });
+      </script>
+    </div>
   </body>
 </html>

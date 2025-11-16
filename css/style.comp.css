@@ -37,6 +37,108 @@ body {
   background-color: #fefdf9;
 }
 
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#page-loader.is-hidden {
+  animation: loaderFadeOut 0.8s ease-in-out forwards;
+}
+
+@keyframes loaderFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+    visibility: hidden;
+  }
+}
+.loader-text {
+  font-size: 8rem;
+  animation: loadText 2s linear infinite;
+}
+@media only screen and (max-width: 120em) {
+  .loader-text {
+    font-size: 6rem;
+  }
+}
+@media only screen and (max-width: 53.75em) {
+  .loader-text {
+    font-size: 4rem;
+  }
+}
+
+@keyframes loadText {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loader-spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 25rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+#content {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-rows: 90rem;
+  row-gap: 5rem;
+  transition: opacity 1s ease-out 0.5s;
+}
+@media only screen and (max-width: 120em) {
+  #content {
+    grid-template-rows: 80rem;
+  }
+}
+@media only screen and (max-width: 34.375em) {
+  #content {
+    grid-template-rows: 65rem;
+    grid-template-columns: [full-start] minmax(2rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(2rem, 1fr) [full-end];
+  }
+}
+
+#content.is-active {
+  opacity: 1;
+}
+
 .header {
   grid-column: full-start/full-end;
   background-image: linear-gradient(to bottom, #ffa66c, #fefdf9);
@@ -75,9 +177,6 @@ body {
   font-size: 10rem;
   line-height: 1;
   font-weight: 600;
-  opacity: 0;
-  animation: fadeIn 0.65s ease-in forwards;
-  animation-delay: 0.25s;
   text-align: center;
 }
 @media only screen and (max-width: 120em) {
@@ -95,7 +194,7 @@ body {
   font-size: 4rem;
   opacity: 0;
   animation: fadeIn 0.65s ease-in forwards;
-  animation-delay: 0.8s;
+  animation-delay: 3s;
   text-align: center;
 }
 .header_description {
@@ -117,7 +216,7 @@ body {
 .header_description_text {
   font-size: 2rem;
   animation: slideFromRight 1s ease-out forwards;
-  animation-delay: 1.45s;
+  animation-delay: 3.65s;
   opacity: 0;
 }
 @media only screen and (max-width: 34.375em) {
@@ -200,7 +299,7 @@ body {
   gap: 5rem;
   margin: 10rem 0;
   animation: fadeIn 1s ease-in forwards;
-  animation-delay: 2.8s;
+  animation-delay: 5s;
   opacity: 0;
 }
 @media only screen and (max-width: 53.75em) {
@@ -301,7 +400,7 @@ body {
   appearance: none;
   border-radius: 0;
   animation: fadeIn 1s ease-in forwards;
-  animation-delay: 2.8s;
+  animation-delay: 5s;
   opacity: 0;
   font-size: 4rem;
   margin-top: 0.5rem;
@@ -324,7 +423,7 @@ body {
   justify-content: space-evenly;
   width: 100%;
   animation: fadeIn 1s ease-in forwards;
-  animation-delay: 2.8s;
+  animation-delay: 5s;
   opacity: 0;
 }
 .main_projects_cards .main_projects_card:has(~ .main_projects_card:hover) {
@@ -602,23 +701,5 @@ body {
   }
   100% {
     transform: translateX(0) translateY(0);
-  }
-}
-.container {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-  grid-template-rows: 90rem;
-  row-gap: 5rem;
-}
-@media only screen and (max-width: 120em) {
-  .container {
-    grid-template-rows: 80rem;
-  }
-}
-@media only screen and (max-width: 34.375em) {
-  .container {
-    grid-template-rows: 65rem;
-    grid-template-columns: [full-start] minmax(2rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(2rem, 1fr) [full-end];
   }
 }
