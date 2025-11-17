@@ -15,7 +15,7 @@
   <body>
     <div id="page-loader">
       <div class="loader-text" id="loadingText"></div>
-      <div class="loader-spinner"></div>
+      <div class="loader-spinner" id="loadingSpinner"></div>
     </div>
 
     <div id="content" class="hidden">
@@ -216,7 +216,7 @@
       </footer>
 
       <script>
-        const loadingOptions = ["I feel like i'm supposed to be loading something...", "Don't panic...", "Are we there yet?", "Initializing the initializer...", "Shovelling coal into the server..."];
+        const loadingOptions = ["I feel like i'm supposed to be loading something...", "Don't panic...", "Are we there yet?", "Initializing the initializer...", "Shoveling coal into the server..."];
 
         function displayRandomText() {
           const randomIndex = Math.floor(Math.random() * loadingOptions.length);
@@ -224,7 +224,6 @@
           document.getElementById("loadingText").innerText = selectedText;
         }
 
-        // Optionally, display a random text on page load
         window.onload = displayRandomText;
       </script>
 
@@ -233,6 +232,7 @@
           const pageLoader = document.getElementById("page-loader");
           const mainContent = document.getElementById("content");
           const headerImage = document.getElementById("header-image");
+          const spinner = document.getElementById("loadingSpinner");
 
           let imageLoaded = false;
           let timeElapsed = false;
@@ -245,6 +245,7 @@
               mainContent.classList.remove("hidden");
 
               setTimeout(() => {
+                spinner.classList.add("is-active");
                 mainContent.classList.add("is-active");
               }, 100);
             }

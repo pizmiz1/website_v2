@@ -102,6 +102,11 @@ body {
   margin-bottom: 25rem;
 }
 
+.loader-spinner.is-active {
+  border: 8px solid #3498db;
+  transition: 0.2s linear;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
