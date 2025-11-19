@@ -14,7 +14,7 @@
   </head>
   <body>
     <div id="page-loader">
-      <div class="loader-text" id="loadingText"></div>
+      <p class="loader-text" id="loadingText">Don't panic...</p>
       <div class="spinner-container">
         <svg id="progress-spinner" viewBox="0 0 100 100" class="spinner">
           <circle class="bg" cx="50" cy="50" r="45" />
@@ -22,18 +22,6 @@
         </svg>
       </div>
     </div>
-
-    <script>
-      const loadingOptions = ["I feel like i'm supposed to be loading something...", "Don't panic...", "Are we there yet?", "Initializing the initializer...", "Shoveling coal into the server..."];
-
-      function displayRandomText() {
-        const randomIndex = Math.floor(Math.random() * loadingOptions.length);
-        const selectedText = loadingOptions[randomIndex];
-        document.getElementById("loadingText").innerText = selectedText;
-      }
-
-      window.onload = displayRandomText;
-    </script>
 
     <div id="content" class="hidden">
       <header class="header">
