@@ -15,8 +15,25 @@
   <body>
     <div id="page-loader">
       <div class="loader-text" id="loadingText"></div>
-      <div class="loader-spinner" id="loadingSpinner"></div>
+      <div class="spinner-container">
+        <svg id="progress-spinner" viewBox="0 0 100 100" class="spinner">
+          <circle class="bg" cx="50" cy="50" r="45" />
+          <circle class="progress" cx="50" cy="50" r="45" />
+        </svg>
+      </div>
     </div>
+
+    <script>
+      const loadingOptions = ["I feel like i'm supposed to be loading something...", "Don't panic...", "Are we there yet?", "Initializing the initializer...", "Shoveling coal into the server..."];
+
+      function displayRandomText() {
+        const randomIndex = Math.floor(Math.random() * loadingOptions.length);
+        const selectedText = loadingOptions[randomIndex];
+        document.getElementById("loadingText").innerText = selectedText;
+      }
+
+      window.onload = displayRandomText;
+    </script>
 
     <div id="content" class="hidden">
       <header class="header">
@@ -216,38 +233,45 @@
       </footer>
 
       <script>
-        const loadingOptions = ["I feel like i'm supposed to be loading something...", "Don't panic...", "Are we there yet?", "Initializing the initializer...", "Shoveling coal into the server..."];
-
-        function displayRandomText() {
-          const randomIndex = Math.floor(Math.random() * loadingOptions.length);
-          const selectedText = loadingOptions[randomIndex];
-          document.getElementById("loadingText").innerText = selectedText;
-        }
-
-        window.onload = displayRandomText;
-      </script>
-
-      <script>
         document.addEventListener("DOMContentLoaded", (event) => {
           const pageLoader = document.getElementById("page-loader");
           const mainContent = document.getElementById("content");
           const headerImage = document.getElementById("header-image");
-          const spinner = document.getElementById("loadingSpinner");
+          const spinnerSVG = document.getElementById("progress-spinner");
+          const progressCircle = document.querySelector(".progress");
+          const loaderText = document.getElementById("loadingText");
 
           let imageLoaded = false;
           let timeElapsed = false;
           const minDisplayTime = 2000; // 2 seconds
+          let rotation = -90;
+
+          const spinInterval = setInterval(() => {
+            rotation += 2;
+            spinnerSVG.style.transform = `rotate(${rotation}deg)`;
+          }, 5);
 
           function initiateExitSequence() {
             if (imageLoaded && timeElapsed) {
-              pageLoader.classList.add("is-hidden");
+              loaderText.classList.add("finished");
 
-              mainContent.classList.remove("hidden");
+              clearInterval(spinInterval);
+
+              spinnerSVG.style.transform = `rotate(${rotation}deg)`;
+
+              spinnerSVG.classList.add("is-filling");
+
+              progressCircle.classList.add("is-filled");
 
               setTimeout(() => {
-                spinner.classList.add("is-active");
-                mainContent.classList.add("is-active");
-              }, 100);
+                pageLoader.classList.add("is-hidden");
+
+                mainContent.classList.remove("hidden");
+
+                setTimeout(() => {
+                  mainContent.classList.add("is-active");
+                }, 100);
+              }, 800);
             }
           }
 

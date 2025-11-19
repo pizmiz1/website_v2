@@ -41,6 +41,11 @@
   }
 }
 
+.loader-text.finished {
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
 @keyframes loadText {
   0% {
     opacity: 1;
@@ -55,28 +60,45 @@
   }
 }
 
-.loader-spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #3498db;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-  margin-bottom: 25rem;
+.spinner-container {
+  width: 10rem;
+  height: 10rem;
+
+  @media only screen and (max-width: $bp-5) {
+    width: 8rem;
+    height: 8rem;
+  }
 }
 
-.loader-spinner.is-active {
-  border: 8px solid #3498db;
-  transition: 0.2s linear;
+.spinner {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: transform 0s linear;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.bg {
+  fill: none;
+  stroke: #f3f3f3;
+  stroke-width: 10;
+}
+
+.progress {
+  fill: none;
+  stroke: #3498db;
+  stroke-width: 10;
+  stroke-linecap: round;
+
+  stroke-dasharray: 283;
+  stroke-dashoffset: 212;
+
+  transition: stroke-dashoffset 0.7s linear;
+}
+
+.spinner.is-filling {
+}
+
+.progress.is-filled {
+  stroke-dashoffset: 0;
 }
 
 .hidden {
