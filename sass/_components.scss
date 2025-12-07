@@ -60,7 +60,7 @@
     font-size: 4rem;
     opacity: 0;
     animation: fadeIn 0.65s ease-in forwards;
-    animation-delay: 4s;
+    animation-delay: 3.1s;
     text-align: center;
   }
 
@@ -83,7 +83,7 @@
     &_text {
       font-size: 2rem;
       animation: slideFromRight 1s ease-out forwards;
-      animation-delay: 4.65s;
+      animation-delay: 3.75s;
       opacity: 0;
 
       @media only screen and (max-width: $bp-6) {
@@ -183,7 +183,7 @@
       gap: 5rem;
       margin: 10rem 0;
       animation: fadeIn 1s ease-in forwards;
-      animation-delay: 6s;
+      animation-delay: 5.1s;
       opacity: 0;
 
       @media only screen and (max-width: $bp-5) {
@@ -286,7 +286,7 @@
       appearance: none;
       border-radius: 0;
       animation: fadeIn 1s ease-in forwards;
-      animation-delay: 6s;
+      animation-delay: 5.1s;
       opacity: 0;
 
       font-size: 4rem;
@@ -312,7 +312,7 @@
       justify-content: space-evenly;
       width: 100%;
       animation: fadeIn 1s ease-in forwards;
-      animation-delay: 6s;
+      animation-delay: 5.1s;
       opacity: 0;
 
       & .main_projects_card:has(~ .main_projects_card:hover) {
