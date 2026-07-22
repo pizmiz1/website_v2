@@ -142,7 +142,7 @@ body {
 #content {
   display: grid;
   height: 100vh;
-  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
   grid-template-rows: 90rem;
   row-gap: 5rem;
   transition: opacity 1s ease-out 0.5s;
@@ -150,6 +150,7 @@ body {
 }
 @media only screen and (max-width: 120em) {
   #content {
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 18rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
     grid-template-rows: 80rem;
   }
 }
@@ -266,7 +267,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-@media only screen and (max-width: 34.375em) {
+@media only screen and (max-width: 53.75em) {
   .header_navbox {
     grid-column: full-start/full-end;
     margin-top: 0;
@@ -328,6 +329,9 @@ body {
   animation-delay: 5.1s;
   opacity: 0;
 }
+.main_experiences_block:nth-of-type(2) .main_experiences_block_img {
+  background-color: #b4d0e2;
+}
 @media only screen and (max-width: 53.75em) {
   .main_experiences_block {
     flex-direction: column;
@@ -343,7 +347,7 @@ body {
 }
 .main_experiences_block_img {
   width: 70rem;
-  height: auto;
+  height: 40rem;
   border-radius: 1rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
@@ -565,6 +569,8 @@ body {
 .footer_text {
   font-size: 2.2rem;
   color: #84827e;
+  text-align: center;
+  line-height: 1.5;
 }
 
 @keyframes fadeIn {
