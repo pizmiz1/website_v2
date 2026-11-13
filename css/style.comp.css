@@ -450,13 +450,14 @@ body {
   }
 }
 .main_projects_card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: inherit;
   text-decoration: none;
   background-color: #f3efe6;
   width: 52rem;
   height: 28rem;
-  padding: 2.5rem;
+  padding: 2.5rem 2.5rem 1.5rem 2.5rem;
   border-radius: 5px;
   box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.12);
   cursor: pointer;
@@ -466,11 +467,17 @@ body {
   .main_projects_card {
     width: 45%;
     min-width: 40rem;
+    height: 26rem;
   }
 }
 @media only screen and (max-width: 62.5em) {
   .main_projects_card_is_clone {
     display: none;
+  }
+}
+@media only screen and (max-width: 34.375em) {
+  .main_projects_card {
+    height: 30rem;
   }
 }
 .main_projects_card:hover {
@@ -479,6 +486,9 @@ body {
 }
 .main_projects_card:hover .main_projects_card_header_imgbox_img {
   outline: 2px solid rgba(119, 119, 119, 0.8);
+}
+.main_projects_card:hover .main_projects_card_chips_chip {
+  border-color: #ffa66c;
 }
 .main_projects_card:active {
   transform: translateY(-1px);
@@ -511,6 +521,7 @@ body {
 }
 .main_projects_card_header_text {
   flex: 1 0;
+  min-width: 0;
 }
 .main_projects_card_header_text_title {
   font-size: 3rem;
@@ -519,10 +530,51 @@ body {
 .main_projects_card_header_text_subtitle {
   font-size: 2rem;
   font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .main_projects_card_description {
   margin-top: 2rem;
   font-size: 1.4rem;
+}
+.main_projects_card_chips {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  gap: 1rem;
+  flex: 1;
+  align-items: flex-end;
+}
+@media only screen and (max-width: 34.375em) {
+  .main_projects_card_chips {
+    overflow: none;
+    flex-wrap: wrap;
+  }
+}
+.main_projects_card_chips_chip {
+  flex-shrink: 0;
+  background-color: #ffd8be;
+  border: 1.5px solid rgba(255, 166, 108, 0.85);
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  transition: border-color 0.2s;
+}
+@media only screen and (max-width: 53.75em) {
+  .main_projects_card_chips_chip {
+    padding: 0.4rem 1rem;
+  }
+}
+.main_projects_card_chips_chip_text {
+  color: #3d1c08;
+  font-size: 1.35rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 53.75em) {
+  .main_projects_card_chips_chip_text {
+    font-size: 1.25rem;
+  }
 }
 
 .footer {
