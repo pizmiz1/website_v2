@@ -465,12 +465,14 @@ body {
 }
 @media only screen and (max-width: 80em) {
   .main_projects_card {
-    width: 45%;
-    min-width: 40rem;
     height: 26rem;
   }
 }
 @media only screen and (max-width: 62.5em) {
+  .main_projects_card {
+    width: 45%;
+    min-width: 40rem;
+  }
   .main_projects_card_is_clone {
     display: none;
   }
@@ -496,9 +498,9 @@ body {
 }
 .main_projects_card_header {
   display: flex;
-  gap: 5rem;
+  gap: 1rem;
 }
-@media only screen and (max-width: 62.5em) {
+@media only screen and (max-width: 53.75em) {
   .main_projects_card_header {
     gap: 2.5rem;
   }

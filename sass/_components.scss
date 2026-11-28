@@ -328,12 +328,12 @@
       transition: all 0.2s;
 
       @media only screen and (max-width: $bp-3) {
-        width: 45%;
-        min-width: 40rem;
         height: 26rem;
       }
 
       @media only screen and (max-width: $bp-4) {
+        width: 45%;
+        min-width: 40rem;
         &_is_clone {
           display: none;
         }
@@ -363,9 +363,9 @@
 
       &_header {
         display: flex;
-        gap: 5rem;
+        gap: 1rem;
 
-        @media only screen and (max-width: $bp-4) {
+        @media only screen and (max-width: $bp-5) {
           gap: 2.5rem;
         }
 
